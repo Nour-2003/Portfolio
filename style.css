@@ -12,8 +12,8 @@
 label.logo {
   font-size: 30px;
   font-weight: bold;
-  padding: 0px 100px;
-  line-height: 90px;
+  padding: 0px 20px;
+  line-height: 70px;
   display: inline-flex;
   color: black;
 }
@@ -33,16 +33,18 @@ nav {
 nav ul {
   float: right;
   margin-right: 30px;
+  display: flex;
+  flex-direction: row;
 }
 
 nav ul li {
   display: inline-block;
-  line-height: 90px;
+  line-height: 70px;
   margin: 0px 10px;
 }
 
 nav ul li a {
-  font-size: 20px;
+  font-size: 16px;
   color: black;
   text-decoration: none;
   border-radius: 4px;
@@ -54,13 +56,32 @@ nav ul li a:hover {
   background-color: gray;
 }
 
+@media only screen and (max-width: 768px) {
+  label.logo {
+    padding: 0 10px;
+    font-size: 24px;
+  }
+
+  nav ul {
+    margin-right: 10px;
+  }
+
+  nav ul li a {
+    font-size: 14px;
+  }
+}
+
+
+nav ul li a:hover {
+  background-color: gray;
+}
 
 body {
   background-color: black;
 }
 
 section {
-  padding-top: 100px;
+  padding-top: 70px;
 }
 
 section.main {
@@ -73,35 +94,38 @@ section.main {
 }
 
 .name {
-  font-size: 45px;
-  padding-left: 50px;
+  font-size: 30px;
+  padding-left: 20px;
   width: 100%;
   float: left;
   display: inline-flex;
 }
 
 .pic {
-  margin-left: 250px;
+  margin-left: 20px;
   float: right;
   width: 100%;
 }
 
 img.back {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   border-radius: 30px;
 }
 
 img.News {
-  width: 500px;
-  height: 350px;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
   border-radius: 5px;
 }
 
 img.game {
-  width: 400px;
-  height: 400px;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
   border-radius: 5px;
-  margin-left: 70px;
+  margin-left: 20px;
 }
 
 span.text1 {
@@ -111,22 +135,22 @@ span.text1 {
 
 p span.text2 {
   display: inline-block;
-  font-size: 35px;
-  margin-left: 40px;
+  font-size: 20px;
+  margin-left: 20px;
 }
 
 p span.text3 {
   opacity: 0.7;
   display: inline-block;
-  font-size: 15px;
-  margin-left: 35px;
-  line-height: 28px;
+  font-size: 14px;
+  margin-left: 20px;
+  line-height: 24px;
 }
 
 p span.text4 {
   display: inline-block;
-  font-size: 16px;
-  margin-left: 50px;
+  font-size: 14px;
+  margin-left: 20px;
   line-height: 25px;
 }
 
@@ -135,33 +159,27 @@ section.projects {
   padding-top: none;
   width: 100%;
   min-height: 90vh;
-  align-items: center;
-  color: white;
-  margin-left: 5px;
 }
 
 .proj_text {
   margin-top: 45px;
-  padding-left: 50px;
-  float: left;
-  font-size: 30px;
+  padding-left: 20px;
+  font-size: 24px;
   color: white;
-  width: 100%;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .Proj_img {
   margin-top: 45px;
   width: 100%;
-  padding-left: 50px;
-  margin-left: 150px;
-  float: right;
+  padding-left: 20px;
+  margin-left: 20px;
 }
 
 .footer {
   display: flex;
-  padding-top: 155px;
-  padding-bottom: 100px;
+  padding-top: 70px;
+  padding-bottom: 50px;
   width: 100%;
   align-items: center;
   color: white;
@@ -174,16 +192,16 @@ section.projects {
 }
 
 .footer .social a {
-  font-size: 45px;
+  font-size: 24px;
   color: dodgerblue;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   padding: 8px;
-  padding-top: 11px;
+  padding-top: 5px;
   vertical-align: middle;
   display: inline-block;
-  height: 3.5vw;
-  width: 3.5vw;
+  height: 3vw;
+  width: 3vw;
   margin-left: 20px;
   opacity: 0.5;
   padding: 1vw 0vw 0vw 1vw;
@@ -191,13 +209,13 @@ section.projects {
 }
 
 .footer .social a i {
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
 }
 
 .links {
   display: inline-flex;
-  margin-left: 35px;
+  margin-left: 20px;
 }
 
 .footer .social a:hover {
