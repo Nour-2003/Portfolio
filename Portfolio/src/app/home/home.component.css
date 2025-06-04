@@ -6,5 +6,36 @@ div.iconContainer {
   padding: 5px;
 }
 div.iconContainer:hover {
-  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  box-shadow: 0 0 10px #00eeff;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px #00eeff;
+  }
+  50% {
+    box-shadow: 0 0 20px #00eeff;
+  }
+  100% {
+    box-shadow: 0 0 5px #00eeff;
+  }
+}
+.btn {
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  box-shadow: 0 0 10px #00eeff, 0 0 20px #00eeff,
+    0 0 30px rgba(0, 238, 255, 0.5);
+  animation: neon-pulse 1.5s infinite alternate;
+}
+
+@keyframes neon-pulse {
+  from {
+    box-shadow: 0 0 5px #00eeff;
+  }
+  to {
+    box-shadow: 0 0 20px #00eeff, 0 0 30px rgba(0, 238, 255, 0.8);
+  }
 }
