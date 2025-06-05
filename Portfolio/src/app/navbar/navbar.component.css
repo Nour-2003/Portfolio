@@ -2,6 +2,10 @@
   position: relative;
   padding-bottom: 5px;
 }
+.nav-link.active {
+  color: #00eeff !important;
+  border-bottom: 2px solid #00eeff;
+}
 
 .nav-link::after {
   content: "";
@@ -21,8 +25,39 @@
 .nav-link.active::after {
   width: 100%;
 }
-.particle-logo {
+.neon-logo {
   position: relative;
-  font-weight: 700;
   color: #00eeff;
+  text-shadow: 0 0 5px #00eeff;
+  font-weight: 700;
+  font-size: 1.8rem;
+  animation: neon-flicker 3s infinite alternate;
+}
+
+.neon-logo::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: rgba(0, 238, 255, 0.3);
+  filter: blur(3px);
+  z-index: -1;
+}
+
+@keyframes neon-flicker {
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+    text-shadow: 0 0 5px #00eeff, 0 0 10px #00eeff, 0 0 20px #00eeff;
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }

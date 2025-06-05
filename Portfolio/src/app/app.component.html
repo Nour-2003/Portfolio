@@ -1,14 +1,22 @@
 <div
+  id="home"
   class="container-fluid"
   style="
     min-height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
       url('assets/images/image 1.png');
     opacity: 0.9;
     background-size: cover;
     background-position: center;
   "
 >
-  <app-navbar></app-navbar>
-  <app-home></app-home>
+  <app-navbar [activeSection]="activeSection"></app-navbar>
+
+  <div id="home">
+    <app-home></app-home>
+  </div>
+</div>
+
+<div id="about">
+  <app-about></app-about>
 </div>
