@@ -1,0 +1,29 @@
+/* skills-section.css */
+.courses-section {
+  padding: 1rem 0;
+}
+
+.course-category {
+  background: rgba(0, 238, 255, 0.05);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  transition: all 0.3s ease;
+}
+
+.course-category:hover {
+  background: rgba(0, 238, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.achievement-list {
+  border-left: 2px solid rgba(0, 238, 255, 0.3);
+  padding-left: 1.5rem;
+  margin-left: 0.75rem;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}

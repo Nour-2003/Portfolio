@@ -1,0 +1,255 @@
+/* Navbar Styles - Responsive */
+.custom-nav {
+  display: flex;
+  gap: 20px; /* Reduced gap for mobile */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap; /* Allow items to wrap on small screens */
+}
+
+@media (min-width: 768px) {
+  .custom-nav {
+    gap: 40px; /* Larger gap on desktop */
+  }
+}
+
+.custom-nav li {
+  padding: 8px 0; /* Reduced padding for mobile */
+  cursor: pointer;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .custom-nav li {
+    padding: 10px 0; /* Larger padding on desktop */
+  }
+}
+
+.custom-nav li p {
+  margin: 0;
+  font-weight: 500;
+  color: white;
+  font-size: 0.9rem; /* Smaller font on mobile */
+}
+
+@media (min-width: 768px) {
+  .custom-nav li p {
+    font-size: 1rem; /* Larger font on desktop */
+  }
+}
+
+.custom-nav li.active p {
+  color: #00eeff;
+}
+
+.custom-nav li.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 3px;
+  background-color: #00eeff;
+  border-radius: 2px;
+}
+
+/* Profile Card - Responsive */
+.profile-card {
+  width: 100%; /* Full width on mobile */
+  max-width: 20rem; /* Max width on larger screens */
+  background: linear-gradient(135deg, #00eeff);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 238, 255, 0.4); /* Reduced shadow on mobile */
+  border: none;
+  overflow: visible;
+  transition: all 0.3s ease;
+  margin: 0 auto; /* Center the card */
+}
+
+@media (min-width: 768px) {
+  .profile-card {
+    box-shadow: 0 10px 30px rgba(0, 238, 255, 0.4); /* Larger shadow on desktop */
+  }
+}
+
+.profile-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 238, 255, 0.5);
+}
+
+.profile-img-container {
+  width: 120px; /* Smaller on mobile */
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid rgba(255, 255, 255, 0.3); /* Thinner border on mobile */
+  background-color: white;
+  transform: translateX(-50%) translateY(-50%);
+  transition: all 0.3s ease;
+  z-index: 10;
+}
+
+@media (min-width: 768px) {
+  .profile-img-container {
+    width: 170px; /* Larger on desktop */
+    height: 170px;
+    border: 5px solid rgba(255, 255, 255, 0.3);
+  }
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.profile-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00eeff;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.profile-img-container:hover .profile-overlay {
+  opacity: 1;
+}
+
+.social-icons {
+  display: flex;
+  gap: 10px; /* Smaller gap on mobile */
+}
+
+@media (min-width: 768px) {
+  .social-icons {
+    gap: 15px; /* Larger gap on desktop */
+  }
+}
+
+.social-icon {
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  width: 30px; /* Smaller on mobile */
+  height: 30px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem; /* Smaller icons on mobile */
+}
+
+@media (min-width: 768px) {
+  .social-icon {
+    width: 35px; /* Larger on desktop */
+    height: 35px;
+    font-size: 1rem;
+  }
+}
+
+.social-icon:hover {
+  background: white;
+  color: #00eeff;
+  transform: translateY(-3px);
+}
+
+.profile-content {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  margin-top: 70px; /* Adjusted for mobile */
+}
+
+@media (min-width: 768px) {
+  .profile-content {
+    margin-top: 90px; /* Adjusted for desktop */
+  }
+}
+
+.profile-name {
+  font-weight: 700;
+  font-size: 1.1rem; /* Smaller on mobile */
+  margin-bottom: 0.8rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 768px) {
+  .profile-name {
+    font-size: 1.2rem; /* Larger on desktop */
+    margin-bottom: 1rem;
+  }
+}
+
+.profile-tags {
+  display: flex;
+  flex-direction: column;
+  gap: 6px; /* Smaller gap on mobile */
+}
+
+@media (min-width: 768px) {
+  .profile-tags {
+    gap: 8px; /* Larger gap on desktop */
+  }
+}
+
+.badge {
+  font-weight: 550;
+  padding: 8px 12px; /* Smaller padding on mobile */
+  color: #1f242d;
+  font-size: 0.8rem; /* Smaller font on mobile */
+  border-radius: 50px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Smaller shadow on mobile */
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 768px) {
+  .badge {
+    padding: 10px 15px; /* Larger padding on desktop */
+    font-size: 0.9rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Decorative circles - Responsive */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.circle-1 {
+  width: 70px; /* Smaller on mobile */
+  height: 70px;
+  top: -20px; /* Adjusted position for mobile */
+  right: -20px;
+}
+
+.circle-2 {
+  width: 40px; /* Smaller on mobile */
+  height: 40px;
+  bottom: -15px; /* Adjusted position for mobile */
+  left: -15px;
+}
+
+@media (min-width: 768px) {
+  .circle-1 {
+    width: 100px; /* Larger on desktop */
+    height: 100px;
+    top: -30px;
+    right: -30px;
+  }
+
+  .circle-2 {
+    width: 60px; /* Larger on desktop */
+    height: 60px;
+    bottom: -20px;
+    left: -20px;
+  }
+}

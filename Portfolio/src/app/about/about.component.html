@@ -1,67 +1,110 @@
-<div class="container-fluid p-5" style="background-color: #1f242d;">
+<div class="container-fluid p-3 p-md-5" style="background-color: #1f242d;">
   <h2
-    class="text-center pt-5 pb-3 fw-bold"
+    class="text-center pt-3 pt-md-5 pb-3 fw-bold"
     style="font-family: 'Poppins', sans-serif;"
   >
     <span class="text-white">About </span>
     <span style="color: #00eeff;">Me</span>
   </h2>
-  <div class="row mt-5 pt-5">
-    <div class="col-4">
-      <div class="container d-flex justify-content-center mt-5">
+
+  <div class="row mt-3 mt-md-5 pt-3 pt-md-5">
+    <!-- Profile Card Column - Full width on mobile, then adjusts -->
+    <div class="col-12 col-md-4 col-lg-4 mb-5 mb-md-0">
+      <div
+        class="container d-flex justify-content-center mt-3 mt-md-5 mb-3 mb-md-5"
+      >
         <div
-          class="card text-center position-relative p-4 pt-5"
-          style="
-            width: 17rem;
-            background-color: #00eeff;
-            border-radius: 16px;
-            box-shadow: 0 6px 20px rgba(0, 238, 255, 0.3);
-            border: none;
-          "
+          class="card profile-card p-3 p-md-5 pt-3 pt-md-5 position-relative"
         >
+          <!-- Profile Image Container -->
           <div
-            class="position-absolute top-0 start-50 translate-middle"
-            style="
-              width: 170px;
-              height: 170px;
-              border-radius: 50%;
-              overflow: hidden;
-              border: 5px solid #1f242d;
-              background-color: white;
-              transform: translateX(-50%) translateY(-50%);
-            "
+            class="profile-img-container position-absolute top-0 start-50 translate-middle"
           >
             <img
               src="assets/images/ProfileImage.png"
-              class="w-100 h-100 object-fit-cover"
+              class="profile-img w-100 h-100 object-fit-cover"
               alt="Profile"
-              style="object-position: center center;"
             />
+            <div
+              class="profile-overlay d-flex justify-content-center align-items-center"
+            >
+              <div class="social-icons d-flex gap-2 gap-md-3">
+                <a
+                  href="https://www.linkedin.com/in/nour-eldin-hesham-466ab2256"
+                  target="_blank"
+                  class="social-icon rounded-circle d-flex justify-content-center align-items-center"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="https://github.com/Nour-2003"
+                  target="_blank"
+                  class="social-icon rounded-circle d-flex justify-content-center align-items-center"
+                >
+                  <i class="fab fa-github"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/share/19QfYVda44/"
+                  target="_blank"
+                  class="social-icon rounded-circle d-flex justify-content-center align-items-center"
+                >
+                  <i class="fa-brands fa-facebook-f"></i>
+                </a>
+              </div>
+            </div>
           </div>
 
-          <div
-            class="mt-4 pt-4"
-            style="color: #1f242d; font-family: 'Poppins', sans-serif;"
-          >
-            <h4
-              class="fw-bold mb-3"
-              style="font-size: 1.25rem; color: #1f242d;"
-            >
-              Nour Eldin Hesham
-            </h4>
-            <p class="mb-2 fw-semibold" style="font-size: 0.9rem;">
-              Frontend Developer
-            </p>
-            <p class="mb-2 fw-semibold" style="font-size: 0.9rem;">
-              Flutter Developer
-            </p>
-            <p class="mb-0 fw-semibold" style="font-size: 0.9rem;">
-              Graphic Designer
-            </p>
+          <!-- Profile Content -->
+          <div class="profile-content mt-3 mt-md-5 pt-3 pt-md-4 text-center">
+            <h4 class="profile-name fw-bold mb-2 mb-md-3">Nour Eldin Hesham</h4>
+            <div class="profile-tags d-flex flex-column gap-1 gap-md-2">
+              <span
+                class="badge bg-white fw-semibold d-flex align-items-center justify-content-center gap-1"
+              >
+                <i class="fab fa-html5 me-2 me-md-3"></i>
+                Frontend Developer
+              </span>
+              <span
+                class="badge bg-white fw-semibold d-flex align-items-center justify-content-center gap-1"
+              >
+                <i class="fab fa-flutter me-2 me-md-3"></i>
+                Flutter Developer
+              </span>
+            </div>
           </div>
+
+          <!-- Decorative Elements -->
+          <div class="position-absolute circle circle-1"></div>
+          <div class="position-absolute circle circle-2"></div>
         </div>
       </div>
     </div>
-    <div class="col-8"></div>
+
+    <!-- Content Column - Full width on mobile, then adjusts -->
+    <div class="col-12 col-md-7 col-lg-7 mx-auto mx-md-3">
+      <nav class="mb-3">
+        <ul class="custom-nav">
+          <li
+            *ngFor="let item of navItems; let i = index"
+            [class.active]="selectedIndex === i"
+            (click)="selectItem(i)"
+          >
+            <p>{{ item }}</p>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mt-3 mt-md-5">
+        @if(selectedIndex == 0){
+        <app-education></app-education>
+        } @else if(selectedIndex ==1){
+        <app-course></app-course>
+        }@else if(selectedIndex ==2){
+        <app-experience></app-experience>
+        }@else{
+        <app-details></app-details>
+        }
+      </div>
+    </div>
   </div>
 </div>

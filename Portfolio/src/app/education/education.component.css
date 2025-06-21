@@ -1,0 +1,39 @@
+/* courses-section.css */
+.courses-container {
+  padding: 1rem 0;
+}
+
+.course-card {
+  transition: transform 0.3s ease;
+  background: rgba(0, 238, 255, 0.05);
+  border-left: 4px solid #00eeff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+  background: rgba(0, 238, 255, 0.1) !important;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 20px;
+}
+
+.timeline-item {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.timeline-badge {
+  position: absolute;
+  left: -28px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #00eeff;
+}
