@@ -54,67 +54,68 @@
   border-radius: 2px;
 }
 
-/* Profile Card - Responsive */
+/* Profile Card Container */
 .profile-card {
-  width: 100%; /* Full width on mobile */
-  max-width: 20rem; /* Max width on larger screens */
-  background: linear-gradient(135deg, #00eeff);
+  width: 100%;
+  max-width: 280px; /* Reduced from 320px for better mobile fit */
+  min-width: 260px; /* Prevent too small on tiny screens */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 238, 255, 0.9),
+    rgba(0, 210, 255, 0.9)
+  );
   border-radius: 20px;
-  box-shadow: 0 5px 15px rgba(0, 238, 255, 0.4); /* Reduced shadow on mobile */
   border: none;
   overflow: visible;
   transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(0, 238, 255, 0.3);
+  position: relative;
+  z-index: 1;
   margin: 0 auto; /* Center the card */
-}
-
-@media (min-width: 768px) {
-  .profile-card {
-    box-shadow: 0 10px 30px rgba(0, 238, 255, 0.4); /* Larger shadow on desktop */
-  }
+  padding: 1.5rem 1rem; /* Adjusted padding for mobile */
 }
 
 .profile-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 35px rgba(0, 238, 255, 0.5);
+  box-shadow: 0 15px 30px rgba(0, 238, 255, 0.4);
 }
 
+/* Profile Image */
 .profile-img-container {
-  width: 120px; /* Smaller on mobile */
-  height: 120px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   overflow: hidden;
-  border: 4px solid rgba(255, 255, 255, 0.3); /* Thinner border on mobile */
+  border: 3px solid rgba(255, 255, 255, 0.4);
   background-color: white;
   transform: translateX(-50%) translateY(-50%);
   transition: all 0.3s ease;
   z-index: 10;
 }
 
-@media (min-width: 768px) {
-  .profile-img-container {
-    width: 170px; /* Larger on desktop */
-    height: 170px;
-    border: 5px solid rgba(255, 255, 255, 0.3);
-  }
-}
-
 .profile-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  transition: transform 0.3s ease;
 }
 
+.profile-img-container:hover .profile-img {
+  transform: scale(1.05);
+}
+
+/* Profile Overlay & Social Icons */
 .profile-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #00eeff;
+  background: rgba(0, 238, 255, 0.8);
   border-radius: 50%;
   opacity: 0;
   transition: opacity 0.3s ease;
+  z-index: 2;
 }
 
 .profile-img-container:hover .profile-overlay {
@@ -122,30 +123,26 @@
 }
 
 .social-icons {
-  display: flex;
-  gap: 10px; /* Smaller gap on mobile */
-}
-
-@media (min-width: 768px) {
-  .social-icons {
-    gap: 15px; /* Larger gap on desktop */
-  }
+  z-index: 3;
 }
 
 .social-icon {
-  color: white;
-  background: rgba(255, 255, 255, 0.2);
-  width: 30px; /* Smaller on mobile */
+  width: 30px;
   height: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 14px;
   transition: all 0.3s ease;
-  font-size: 0.9rem; /* Smaller icons on mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
   .social-icon {
-    width: 35px; /* Larger on desktop */
+    width: 35px;
     height: 35px;
-    font-size: 1rem;
+    font-size: 16px;
   }
 }
 
@@ -155,30 +152,18 @@
   transform: translateY(-3px);
 }
 
+/* Profile Content */
 .profile-content {
+  margin-top: 50px; /* Reduced space for mobile */
   color: white;
   font-family: "Poppins", sans-serif;
-  margin-top: 70px; /* Adjusted for mobile */
-}
-
-@media (min-width: 768px) {
-  .profile-content {
-    margin-top: 90px; /* Adjusted for desktop */
-  }
 }
 
 .profile-name {
+  font-size: 1.1rem; /* Smaller font on mobile */
   font-weight: 700;
-  font-size: 1.1rem; /* Smaller on mobile */
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.75rem;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-@media (min-width: 768px) {
-  .profile-name {
-    font-size: 1.2rem; /* Larger on desktop */
-    margin-bottom: 1rem;
-  }
 }
 
 .profile-tags {
@@ -187,69 +172,105 @@
   gap: 6px; /* Smaller gap on mobile */
 }
 
-@media (min-width: 768px) {
-  .profile-tags {
-    gap: 8px; /* Larger gap on desktop */
-  }
-}
-
 .badge {
-  font-weight: 550;
-  padding: 8px 12px; /* Smaller padding on mobile */
+  font-size: 0.75rem;
+  background: white;
   color: #1f242d;
-  font-size: 0.8rem; /* Smaller font on mobile */
+  font-weight: 600;
   border-radius: 50px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Smaller shadow on mobile */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
-}
-
-@media (min-width: 768px) {
-  .badge {
-    padding: 10px 15px; /* Larger padding on desktop */
-    font-size: 0.9rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
+  display: flex;
+  align-items: center;
 }
 
 .badge:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Decorative circles - Responsive */
+.badge i {
+  font-size: 1rem;
+}
+
+/* Decorative Circles */
 .circle {
   position: absolute;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.1);
-  z-index: 1;
+  z-index: -1;
 }
 
 .circle-1 {
-  width: 70px; /* Smaller on mobile */
-  height: 70px;
-  top: -20px; /* Adjusted position for mobile */
+  width: 80px;
+  height: 80px;
+  top: -20px;
   right: -20px;
 }
 
 .circle-2 {
-  width: 40px; /* Smaller on mobile */
-  height: 40px;
-  bottom: -15px; /* Adjusted position for mobile */
+  width: 50px;
+  height: 50px;
+  bottom: -15px;
   left: -15px;
 }
 
 @media (min-width: 768px) {
   .circle-1 {
-    width: 100px; /* Larger on desktop */
+    width: 100px;
     height: 100px;
     top: -30px;
     right: -30px;
   }
 
   .circle-2 {
-    width: 60px; /* Larger on desktop */
+    width: 60px;
     height: 60px;
     bottom: -20px;
     left: -20px;
+  }
+}
+/* Tablet and Desktop Styles */
+@media (min-width: 576px) {
+  .profile-card {
+    max-width: 300px;
+    padding: 2rem 1.5rem;
+  }
+
+  .profile-img-container {
+    width: 120px;
+    height: 120px;
+    border-width: 4px;
+  }
+}
+
+@media (min-width: 768px) {
+  .profile-card {
+    max-width: 320px;
+    padding: 3rem 2rem;
+  }
+
+  .profile-img-container {
+    width: 180px;
+    height: 180px;
+    border-width: 5px;
+  }
+
+  .profile-content {
+    margin-top: 80px;
+  }
+
+  .profile-name {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .profile-tags {
+    gap: 8px;
+  }
+
+  .badge {
+    padding: 10px 20px;
+    font-size: 0.9rem;
   }
 }

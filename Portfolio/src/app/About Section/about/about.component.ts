@@ -1,14 +1,20 @@
 import { NgFor } from "@angular/common";
 import { Component, HostListener, NgModule } from "@angular/core";
 import { EducationComponent } from "../education/education.component";
-import { CourseComponent } from "../course/course.component";
 import { ExperienceComponent } from "../experience/experience.component";
 import { DetailsComponent } from "../details/details.component";
+import { CourseComponent } from "../course/course.component";
 
 @Component({
   selector: "app-about",
   standalone: true,
-  imports: [NgFor, EducationComponent, CourseComponent, ExperienceComponent, DetailsComponent],
+  imports: [
+    NgFor,
+    EducationComponent,
+    CourseComponent,
+    ExperienceComponent,
+    DetailsComponent,
+  ],
   templateUrl: "./about.component.html",
   styleUrl: "./about.component.css",
 })

@@ -1,63 +1,26 @@
-<nav
-  class="navbar navbar-expand-lg pt-3 pb-5 fixed-top"
-  style="font-family: 'Poppins', sans-serif;"
->
-  <div class="container-fluid d-flex justify-content-center">
-    <div
-      class="d-flex justify-content-between align-items-center"
-      style="width: 800px;"
-    >
-      <a class="navbar-brand neon-logo" href="#">NE</a>
-      <ul class="navbar-nav d-flex flex-row gap-4 mb-0">
-        <li class="nav-item">
-          <a
-            class="nav-link text-white"
-            href="#home"
-            [class.active]="activeSection === 'home'"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link text-white"
-            href="#about"
-            [class.active]="activeSection === 'about'"
-            >About</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link text-white"
-            href="#skills"
-            [class.active]="activeSection === 'skills'"
-            >Skills</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link text-white"
-            href="#services"
-            [class.active]="activeSection === 'services'"
-            >Services</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link text-white"
-            href="#portfolio"
-            [class.active]="activeSection === 'portfolio'"
-            >Portfolio</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link text-white"
-            href="#contact"
-            [class.active]="activeSection === 'contact'"
-            >Contact</a
-          >
-        </li>
-      </ul>
+<nav class="navbar">
+  <div class="navbar-container">
+    <a class="navbar-brand" href="#">NE</a>
+    
+    <!-- Mobile menu button -->
+    <button class="menu-toggle" (click)="toggleMenu()" aria-label="Toggle navigation">
+      <span class="hamburger" [class.active]="!isMenuCollapsed"></span>
+    </button>
+    
+    <!-- Navigation links -->
+    <div class="nav-links" [class.active]="!isMenuCollapsed">
+      <a class="nav-link" href="#home" (click)="closeMenu()" 
+         [class.active]="activeSection === 'home'">Home</a>
+      <a class="nav-link" href="#about" (click)="closeMenu()"
+         [class.active]="activeSection === 'about'">About</a>
+      <a class="nav-link" href="#skills" (click)="closeMenu()"
+         [class.active]="activeSection === 'skills'">Skills</a>
+      <a class="nav-link" href="#services" (click)="closeMenu()"
+         [class.active]="activeSection === 'services'">Services</a>
+      <a class="nav-link" href="#portfolio" (click)="closeMenu()"
+         [class.active]="activeSection === 'portfolio'">Portfolio</a>
+      <a class="nav-link" href="#contact" (click)="closeMenu()"
+         [class.active]="activeSection === 'contact'">Contact</a>
     </div>
   </div>
 </nav>

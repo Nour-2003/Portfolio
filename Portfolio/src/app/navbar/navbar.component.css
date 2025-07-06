@@ -1,10 +1,62 @@
-.nav-link {
-  position: relative;
-  padding-bottom: 5px;
+/* Base styles */
+.navbar {
+  padding: 1rem 2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  font-family: "Poppins", sans-serif;
 }
-.nav-link.active {
-  color: #00eeff !important;
-  border-bottom: 2px solid #00eeff;
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  /* Enhanced Background */
+  background: linear-gradient(
+    135deg,
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(26, 35, 58, 0.95) 100%
+  );
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  /* Borders & Shadows */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 0 0 8px 8px;
+
+  /* Smooth transition for hover effects (if any) */
+  transition: all 0.3s ease;
+}
+
+/* Brand/Logo */
+.navbar-brand {
+  color: #00eeff;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  text-shadow: 0 0 5px #00eeff;
+  position: relative;
+  margin-right: 2rem;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .nav-link::after {
@@ -18,32 +70,93 @@
   transition: width 0.3s ease;
 }
 
-.nav-link:hover::after {
-  width: 100%;
+.nav-link:hover,
+.nav-link.active {
+  color: #00eeff;
 }
 
+.nav-link:hover::after,
 .nav-link.active::after {
   width: 100%;
 }
-.neon-logo {
+
+/* Mobile menu button */
+.menu-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: none;
+  padding: 0.5rem;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #00eeff;
   position: relative;
-  color: #00eeff;
-  text-shadow: 0 0 5px #00eeff;
-  font-weight: 700;
-  font-size: 1.8rem;
-  animation: neon-flicker 3s infinite alternate;
+  transition: all 0.3s ease;
 }
 
-.neon-logo::before {
-  content: attr(data-text);
+.hamburger::before,
+.hamburger::after {
+  content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  color: rgba(0, 238, 255, 0.3);
-  filter: blur(3px);
-  z-index: -1;
+  width: 24px;
+  height: 2px;
+  background: #00eeff;
+  transition: all 0.3s ease;
 }
 
+.hamburger::before {
+  top: -8px;
+}
+
+.hamburger::after {
+  top: 8px;
+}
+
+.hamburger.active {
+  background: transparent;
+}
+
+.hamburger.active::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.hamburger.active::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: rgba(15, 23, 42, 0.95);
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-150%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+  }
+}
+
+/* Animation for neon flicker */
 @keyframes neon-flicker {
   0%,
   19%,
@@ -60,4 +173,8 @@
   55% {
     text-shadow: none;
   }
+}
+
+.navbar-brand {
+  animation: neon-flicker 3s infinite alternate;
 }

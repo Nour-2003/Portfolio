@@ -8,6 +8,7 @@ export const routes: Routes = [];
       anchorScrolling: "enabled",
       scrollOffset: [0, 80], // Optional: to offset fixed navbar height
     }),
+    
   ],
   exports: [RouterModule],
 })

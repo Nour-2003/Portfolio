@@ -1,0 +1,20 @@
+<div class="skill-item d-flex align-items-center mb-4">
+  <div class="skill-icon me-3">
+    <img [src]="skillIcon" [alt]="skillName" class="img-fluid skill-img" />
+  </div>
+  <div class="skill-progress flex-grow-1 position-relative">
+    <div class="d-flex justify-content-between mb-2">
+      <span class="text-white">{{skillName}}</span>
+    </div>
+    <div class="progress position-relative">
+      <div
+        class="progress-bar"
+        role="progressbar"
+        [style.width.%]="progress"
+        [style.background-color]="'#00eeff'"
+        [style.border-radius]="'30px'"
+      ></div>
+      <span class="position-absolute progress-percent">{{progress}}%</span>
+    </div>
+  </div>
+</div>

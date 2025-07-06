@@ -1,26 +1,13 @@
-<div class="container-fluid pt-5">
-  <div class="row p-5 justify-content-center align-items-center">
-    <div
-      class="col-5 ms-5 col-lg-5 col-md-6 col-sm-12 d-flex flex-column justify-content-center align-items-start"
-    >
-      <div
-        class="d-flex flex-column justify-content-center align-items-start h-100"
-      >
-        <p
-          class="text-white mb-1"
-          style="font-family: 'Poppins', sans-serif; font-size: 3rem;"
-        >
-          Hello, I'm Nour Eldin
-        </p>
-        <h2>
-          <span class="text-light" style="font-family: 'Poppins', sans-serif;">
-            And I'm
-          </span>
-          <span style="font-family: 'Poppins', sans-serif; color: #00eeff;">
-            a Web Developer
-          </span>
+<div class="container-fluid intro-container">
+  <div class="row intro-content">
+    <div class="col-lg-5 col-md-6 col-sm-12 intro-text-section">
+      <div class="intro-text-wrapper">
+        <p class="intro-greeting">Hello, I'm Nour Eldin</p>
+        <h2 class="intro-title">
+          <span class="intro-title-text">And I'm</span>
+          <span class="intro-title-highlight"> a Web Developer</span>
         </h2>
-        <p class="text-white mb-4" style="font-family: 'Poppins', sans-serif;">
+        <p class="intro-description">
           I'm a dedicated web developer with a strong eye for design and a focus
           on building fast, responsive, and user-friendly websites. I enjoy
           turning ideas into real-world digital experiences and continuously
@@ -33,75 +20,49 @@
           deliver a seamless user experience on both Android and iOS.
         </p>
 
-        <div class="d-flex gap-3">
+        <div class="social-icons-container">
           <div
-            class="d-flex align-items-center justify-content-center iconContainer"
-            onclick="window.open('https://www.facebook.com/share/19QfYVda44/')"
+            class="icon-container"
+            (click)="openLink('https://www.facebook.com/share/19QfYVda44/')"
           >
-            <i
-              class="fa-brands fa-facebook-f fa-lg"
-              style="color: #00eeff;"
-            ></i>
+            <i class="fa-brands fa-facebook-f"></i>
           </div>
           <div
-            class="d-flex align-items-center justify-content-center iconContainer"
-            onclick="window.open('https://www.linkedin.com/in/nour-eldin-hesham-466ab2256')"
+            class="icon-container"
+            (click)="openLink('https://www.linkedin.com/in/nour-eldin-hesham-466ab2256')"
           >
-            <i
-              class="fa-brands fa-linkedin-in fa-lg"
-              style="color: #00eeff;"
-            ></i>
+            <i class="fa-brands fa-linkedin-in"></i>
           </div>
           <div
-            class="d-flex align-items-center justify-content-center iconContainer"
-            onclick="window.open('https://github.com/Nour-2003')"
+            class="icon-container"
+            (click)="openLink('https://github.com/Nour-2003')"
           >
-            <i class="fa-brands fa-github fa-lg" style="color: #00eeff;"></i>
+            <i class="fa-brands fa-github"></i>
           </div>
           <div
-            class="d-flex align-items-center justify-content-center iconContainer"
-            onclick="window.open('mailto:noureldeanh@gmail.com')"
+            class="icon-container"
+            (click)="openLink('mailto:noureldeanh@gmail.com')"
           >
-            <i class="fa-solid fa-envelope fa-lg" style="color: #00eeff;"></i>
+            <i class="fa-solid fa-envelope"></i>
           </div>
         </div>
-        <div
-          class="d-flex justify-content-center align-items-center gap-3 mt-3"
-        >
-          <button
-            class="btn px-5 py-2 rounded-5"
-            style="
-              font-family: 'Poppins', sans-serif;
-              background-color: #00eeff;
-              border: none;
-            "
-            onclick="window.open('assets/Nour_Eldin_Software_Developer.pdf')"
-          >
+
+        <div class="intro-buttons">
+          <button class="btn btn-download" (click)="downloadCV()">
             Download CV
           </button>
-          <button
-            class="btn rounded-5 px-5 py-2"
-            style="
-              font-family: 'Poppins', sans-serif;
-              background-color: #00eeff;
-              border: none;
-            "
-            onclick="window.location.href='#portfolio'"
-          >
+          <button class="btn btn-portfolio" (click)="scrollToPortfolio()">
             Portfolio
           </button>
         </div>
       </div>
     </div>
-    <div
-      class="col-6 ms-5 d-flex justify-content-center align-items-center col-lg-6 col-md-6 col-sm-12 pt-3"
-    >
-      <img
-        src="assets/images/CV.jpg"
-        alt="Nour Eldin"
-        class="img-fluid rounded-circle"
-        style="width: 300px; height: 300px; object-fit: cover;"
-      />
+
+    <div class="col-lg-6 col-md-12 order-lg-2 order-1 mb-4 mb-lg-0">
+      <div class="profile-image-container">
+        <img [src]="profileImage" alt="Nour Eldin" class="profile-image" />
+        <div class="profile-border-animation"></div>
+      </div>
     </div>
   </div>
 </div>
