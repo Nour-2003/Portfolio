@@ -1,0 +1,154 @@
+<section class="contact">
+  <h2
+    class="text-center pt-3 pt-md-5 pb-3 fw-bold"
+    style="font-family: 'Poppins', sans-serif;"
+  >
+    <span class="text-white">Contact </span>
+    <span class="highlight-text">Me</span>
+  </h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <div class="logo-placeholder">
+        <span class="logo-initials">NE</span>
+      </div>
+      <p class="animated-text">
+        I am a professional Web designer with extensive experience creating
+        beautiful, functional websites. I've designed over 50 web templates for
+        clients worldwide. Whether you need a personal portfolio, business
+        website, or e-commerce solution, I deliver high-quality work with
+        complete satisfaction guaranteed.
+      </p>
+      <div class="contact-details">
+        <div class="detail-item">
+          <i class="fas fa-phone icon-animate"></i>
+          <span>+20 (12) 03299971</span>
+        </div>
+        <div class="detail-item">
+          <i class="fas fa-envelope icon-animate"></i>
+          <span>noureldeanh&#64;gmail.com</span>
+        </div>
+      </div>
+      <div class="social-icons-container">
+        <div class="icon-container" title="LinkedIn">
+          <a
+            href="https://github.com/Nour-2003"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <div class="icon-container" title="GitHub">
+          <a
+            href="https://www.linkedin.com/in/nour-eldin-hesham-466ab2256"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <div class="icon-container" title="Facebook">
+          <a
+            href="https://www.facebook.com/share/19QfYVda44/"
+            target="_blank"
+            class="social-link"
+          >
+            <i class="fab fa-facebook"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+    <form (ngSubmit)="submitForm()" class="contact-form" #contactForm="ngForm">
+      <div class="form-header">
+        <h3>Get in Touch</h3>
+        <p>Have a project in mind? Send me a message!</p>
+      </div>
+      <div class="row">
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="First Name *"
+            [(ngModel)]="contactData.firstName"
+            name="firstName"
+            required
+            class="form-input"
+            #firstName="ngModel"
+          />
+          <span class="input-highlight"></span>
+          <div
+            *ngIf="firstName.invalid && (firstName.dirty || firstName.touched)"
+            class="validation-error"
+          >
+            First name is required
+          </div>
+        </div>
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="Last Name"
+            [(ngModel)]="contactData.lastName"
+            name="lastName"
+            class="form-input"
+          />
+          <span class="input-highlight"></span>
+        </div>
+      </div>
+      <div class="input-group">
+        <input
+          type="email"
+          placeholder="Email *"
+          [(ngModel)]="contactData.email"
+          name="email"
+          required
+          class="form-input"
+          #email="ngModel"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        />
+        <span class="input-highlight"></span>
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="validation-error"
+        >
+          <span *ngIf="email.errors?.['required']">Email is required</span>
+          <span *ngIf="email.errors?.['pattern']"
+            >Please enter a valid email</span
+          >
+        </div>
+      </div>
+      <div class="input-group">
+        <textarea
+          placeholder="Your Message *"
+          [(ngModel)]="contactData.message"
+          name="message"
+          required
+          class="form-textarea"
+          #message="ngModel"
+          minlength="10"
+        ></textarea>
+        <span class="input-highlight"></span>
+        <div
+          *ngIf="message.invalid && (message.dirty || message.touched)"
+          class="validation-error"
+        >
+          <span *ngIf="message.errors?.['required']">Message is required</span>
+          <span *ngIf="message.errors?.['minlength']"
+            >Message should be at least 10 characters</span
+          >
+        </div>
+      </div>
+      <button
+        type="submit"
+        class="submit-btn"
+        [disabled]="!contactForm.form.valid || isSubmitting"
+        [ngClass]="{'disabled-btn': !contactForm.form.valid || isSubmitting}"
+      >
+        <span *ngIf="!isSubmitting">Send Message</span>
+        <span *ngIf="isSubmitting">Sending...</span>
+        <i
+          class="fas"
+          [ngClass]="{'fa-paper-plane': !isSubmitting, 'fa-spinner fa-spin': isSubmitting}"
+        ></i>
+      </button>
+    </form>
+  </div>
+</section>

@@ -1,132 +1,221 @@
-/* Add this to your stylesheet */
-.skill-progress {
-  width: 100%;
-}
-
-.progress {
+/* Skills Section Styling */
+.skills-section {
+  background: linear-gradient(135deg, #1f242d 0%, #2c3039 100%);
   position: relative;
-  height: 30px !important;
-  width: 80%;
-  background-color: #2c3039;
-  border-radius: 40px;
-  overflow: visible;
+  overflow: hidden;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background: rgba(0, 238, 255, 0.1);
+    border-radius: 50%;
+    filter: blur(80px);
+    z-index: 0;
+  }
 }
 
-.progress-bar {
-  border-radius: 40px;
-  transition: width 1s ease-in-out;
+.section-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem 0;
+  position: relative;
+  z-index: 1;
+  
+  .highlight-text {
+    color: #00eeff;
+    text-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #00eeff;
+      border-radius: 3px;
+    }
+  }
 }
 
-.progress-percent {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
 }
 
-/* For better visibility when progress is high */
-.progress-bar[style*="90%"] ~ .progress-percent,
-.progress-bar[style*="95%"] ~ .progress-percent,
-.progress-bar[style*="100%"] ~ .progress-percent {
-  color: #1f242d !important;
-  right: 8px;
+.skills-column {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
-/* Skill Section Styling */
-.skill-item {
-  background-color: rgba(255, 255, 255, 0.05);
+
+.skill-card {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(10px);
   border-radius: 15px;
-  padding: 15px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 238, 255, 0.2);
+    border-color: rgba(0, 238, 255, 0.3);
+    
+    &::before {
+      opacity: 1;
+    }
+  }
+  
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, 
+      rgba(0, 238, 255, 0.05) 0%, 
+      rgba(0, 238, 255, 0.02) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
 }
 
-.skill-item:hover {
-  background-color: rgba(0, 238, 255, 0.1);
-  transform: translateY(-3px);
+/* Enhanced Progress Bar Styles */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
 }
 
 .skill-icon {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  padding: 12px;
   flex-shrink: 0;
+  padding: 12px;
+  transition: all 0.3s ease;
+  
+  img {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
 }
 
-.skill-img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 50%;
-  height: auto;
-  transition: transform 0.3s ease;
+.skill-card:hover .skill-icon {
+  background: rgba(0, 238, 255, 0.2);
+  box-shadow: 0 0 15px rgba(0, 238, 255, 0.2);
+  
+  img {
+    transform: scale(1.1);
+  }
 }
 
-.skill-item:hover .skill-img {
-  transform: scale(1.1);
+.skill-info {
+  flex-grow: 1;
 }
 
-.progress {
-  height: 20px;
-  background-color: #2c3039;
-  border-radius: 30px;
-  overflow: hidden;
+.skill-name {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+
+.progress-wrapper {
   position: relative;
 }
 
-.progress-bar {
-  transition: width 1s ease-in-out;
+.progress {
+  height: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
 }
+
+.progress-bar {
+  height: 100%;
+  border-radius: 10px;
+  transition: width 1s ease-in-out;
+  position: relative;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+      rgba(255, 255, 255, 0.3) 0%, 
+      transparent 100%);
+    opacity: 0.3;
+  }
+}
+
+/* Category-specific colors */
+.progress-bar.web { background: linear-gradient(90deg, #00eeff, #0088ff); }
+.progress-bar.framework { background: linear-gradient(90deg, #00eeff, #00bbff); }
 
 .progress-percent {
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-}
-
-/* For high percentages - better contrast */
-.progress-bar[style*="90%"] ~ .progress-percent,
-.progress-bar[style*="95%"] ~ .progress-percent {
-  color: #1f242d;
+  position: absolute;
+  right: 0;
+  top: -25px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #00eeff;
 }
 
 /* Responsive Adjustments */
-@media (max-width: 767.98px) {
-  .skill-item {
-    padding: 12px;
+@media (max-width: 768px) {
+  .skills-column {
+    min-width: 100%;
   }
-
-  .skill-icon {
-    width: 60px;
-    height: 60px;
-    padding: 10px;
+  
+  .skill-card {
+    padding: 1.2rem;
   }
-
-  .progress {
-    height: 18px;
-  }
-
-  .progress-percent {
-    font-size: 11px;
-  }
-}
-
-@media (max-width: 575.98px) {
+  
   .skill-icon {
     width: 50px;
     height: 50px;
-    padding: 8px;
+    padding: 10px;
   }
+}
 
-  .progress {
-    height: 16px;
+@media (max-width: 480px) {
+  .progress-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.8rem;
+  }
+  
+  .skill-info {
+    width: 100%;
   }
 }

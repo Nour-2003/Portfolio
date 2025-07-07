@@ -6,6 +6,7 @@ import { AboutComponent } from "./About Section/about/about.component";
 import { SkillsComponent } from "./Skills Section/skills/skills.component";
 import { ServicesComponent } from "./Service Section/services/services.component";
 import { PortfolioComponent } from "./Porfolio Section/portfolio/portfolio.component";
+import { ContactComponent } from "./Contact Section/contact/contact.component";
 
 @Component({
   selector: "app-root",
@@ -17,8 +18,9 @@ import { PortfolioComponent } from "./Porfolio Section/portfolio/portfolio.compo
     AboutComponent,
     SkillsComponent,
     ServicesComponent,
-    PortfolioComponent
-],
+    PortfolioComponent,
+    ContactComponent,
+  ],
   templateUrl: "./app.component.html",
   styleUrl: "./app.component.css",
 })
@@ -47,5 +49,8 @@ export class AppComponent {
         }
       }
     }
+  }
+  scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 }
