@@ -120,7 +120,7 @@ npx angular-cli-ghpages --dir=dist/portfolio-angular
 
 Want to get in touch?
 
-- 📧 Email: your.email@example.com
+- 📧 Email: noureldeanh@gmail.com
 - 💼 LinkedIn: [linkedin.com/in/your-profile](https://www.linkedin.com/in/nour-eldin-hesham-466ab2256)
 - 🐙 GitHub: [github.com/your-username](https://github.com/Nour-2003)
 
