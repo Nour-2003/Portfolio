@@ -1,3 +1,29 @@
+.about-title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  text-align: center;
+  padding: 2rem 0;
+  position: relative;
+  z-index: 1;
+
+  .highlight-text {
+    color: #00eeff;
+    text-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background: #00eeff;
+      border-radius: 3px;
+    }
+  }
+}
 /* Navbar Styles - Responsive */
 .custom-nav {
   display: flex;

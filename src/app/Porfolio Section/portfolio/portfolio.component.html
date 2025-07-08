@@ -2,10 +2,14 @@
   <div class="container-fluid px-3 px-md-5 py-5">
     <h2 class="portfolio-title">
       <span class="text-white">My </span>
-      <span class="text-cyan">Portfolio</span>
+      <span class="highlight-text">Portfolio</span>
     </h2>
     <div class="portfolio-grid">
-      <div class="portfolio-card" *ngFor="let item of portfolioItems" (click)="openLink(item.link)">
+      <div
+        class="portfolio-card"
+        *ngFor="let item of portfolioItems"
+        (click)="openLink(item.link)"
+      >
         <img [src]="item.image" alt="Portfolio Image" class="card-image" />
         <div class="card-overlay">
           <h3 class="card-title">{{ item.title }}</h3>
