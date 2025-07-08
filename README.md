@@ -1,27 +1,127 @@
-# Portfolio
+# 🌐 Angular Portfolio Website
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.8.
+A modern, responsive **portfolio website** built using **Angular 17**, featuring sleek design, dynamic animations, a contact form using **EmailJS**, and alert handling via **SweetAlert**. This portfolio highlights your personal skills, services, and projects in a professional format.
 
-## Development server
+---
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 🚀 Live Demo
 
-## Code scaffolding
+[🔗 View Live Project](https://nour-2003.github.io/Portfolio/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+---
 
-## Build
+## 📁 Project Structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+src/
+└── app/
+    ├── About Section/
+    ├── Contact Section \contact/       # EmailJS integrated form
+    ├── Hire Sevice/
+    ├── home/
+    ├── modal/
+    ├── navbar/                         # Fixed header navbar
+    ├── Porfolio Section/              # Projects or works
+    ├── Service Section/
+    ├── Skills Section/                # Skills with progress bars
+    ├── app.component.html
+    ├── app.component.scss
+    ├── app.component.ts
+    ├── app.component.spec.ts
+    ├── app.config.ts
+    └── app.routes.ts
+```
 
-## Running unit tests
+---
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## 💡 Features
 
-## Running end-to-end tests
+- ✅ Responsive design (Mobile-first)
+- 🎨 Modular section-based architecture (About, Skills, Services, Portfolio, Contact)
+- 📩 **Contact form** powered by **EmailJS**
+- 🎉 Alerts and success messages handled using **SweetAlert2**
+- 🌙 Smooth transitions and effects
+- 🧠 Clean SCSS-based styling and reusable components
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+---
 
-## Further help
+## 🧰 Tech Stack
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- **Framework**: Angular 17
+- **Language**: TypeScript
+- **Styling**: SCSS / CSS3
+- **Email**: [EmailJS](https://www.emailjs.com/)
+- **Alerts**: [SweetAlert2](https://sweetalert2.github.io/)
+
+---
+
+## 📦 Installation
+
+```bash
+git clone https://github.com/your-username/portfolio-angular.git
+cd portfolio-angular
+npm install
+```
+
+---
+
+## 🧪 Development Server
+
+```bash
+ng serve
+```
+
+Navigate to `http://localhost:4200/`. The app automatically reloads if you change any source file.
+
+---
+
+## 🏗️ Build for Production
+
+```bash
+ng build
+```
+
+Build artifacts will be stored in the `dist/` folder.
+
+---
+
+## 🧪 Testing
+
+### Unit Tests
+
+```bash
+ng test
+```
+
+### End-to-End Tests
+
+```bash
+ng e2e
+```
+
+*(Add a testing framework for E2E if needed)*
+
+---
+
+## 🚀 Deployment
+
+To deploy on GitHub Pages:
+
+```bash
+ng build --configuration production
+npx angular-cli-ghpages --dir=dist/portfolio-angular
+```
+
+> Make sure `angular-cli-ghpages` is installed globally.
+
+---
+
+## 📬 Contact
+
+Want to get in touch?
+
+- 📧 Email: your.email@example.com
+- 💼 LinkedIn: [linkedin.com/in/your-profile](https://www.linkedin.com/in/nour-eldin-hesham-466ab2256)
+- 🐙 GitHub: [github.com/your-username](https://github.com/Nour-2003)
+
+---
