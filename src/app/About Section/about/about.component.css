@@ -27,16 +27,17 @@
 /* Navbar Styles - Responsive */
 .custom-nav {
   display: flex;
-  gap: 20px; /* Reduced gap for mobile */
+  gap: 40px; /* Reduced gap for mobile */
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-wrap: wrap; /* Allow items to wrap on small screens */
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {
   .custom-nav {
-    gap: 40px; /* Larger gap on desktop */
+    gap: 40px;
   }
 }
 
